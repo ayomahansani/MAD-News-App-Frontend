@@ -5,6 +5,10 @@ import {useLocalSearchParams} from "expo-router";
 function NewsDetails() {
 
     const { title, content, urlToImage, description } = useLocalSearchParams();
+
+    // Ensure urlToImage is a string (not an array)
+    const imageUrl = Array.isArray(urlToImage) ? urlToImage[0] : urlToImage;
+
     console.log({
         title,
         content,
@@ -14,8 +18,8 @@ function NewsDetails() {
     return (
         <ScrollView style={styles.container}>
             <Text style={styles.title}>{title}</Text>
-            {urlToImage && (
-                <Image source={{ uri: urlToImage }} style={styles.image} />
+            {imageUrl && (
+                <Image source={{ uri: imageUrl }} style={styles.image} />
             )}
             <Text style={styles.description}>{description}</Text>
             <Text style={styles.content}>{content}</Text>

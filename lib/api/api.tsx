@@ -5,7 +5,7 @@ const api = axios.create({
 })
 
 // get news by category
-export async function getNewsByCategory(category) {
+export async function getNewsByCategory(category: string) {
     const response = await api.get(
         `/everything?q=${category}&apiKey=d284964e721645ff882dbb3cbe939777`
     );

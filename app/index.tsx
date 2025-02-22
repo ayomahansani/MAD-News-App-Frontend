@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, ImageBackground, } from "react-native";
+import { StyleSheet, Text, View, ImageBackground, TouchableOpacity,} from "react-native";
 import React from "react";
+import {router, useRouter} from "expo-router";
 
 function Home(){
     return(
@@ -10,8 +11,35 @@ function Home(){
                 }}
                 style={styles.backgroundImage}
                 resizeMode="cover"
-            />
-            <Text>Home</Text>
+            >
+                <View style={styles.overlay}>
+                    <View style={styles.header}>
+                        <Text style={styles.title}>Masync News App</Text>
+                    </View>
+                    <View style={styles.content}>
+                        <Text style={styles.subtitle}>
+                            Welcome to Masync News App. Your daily does of news, curated just for you...
+                        </Text>
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={() => {
+                                router.push("/news/categories");
+                            }}
+                        >
+                            <Text>Browse By Categories</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={() => {
+                                router.push("/news/categories/countryCategories");
+                            }}
+                        >
+                            <Text>Browse By Country</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
+            </ImageBackground>
         </View>
     );
 }

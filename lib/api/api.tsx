@@ -11,3 +11,12 @@ export async function getNewsByCategory(category: string) {
     );
     return response.data;
 }
+
+// get top news by country
+
+export async function getTopNewsByCountry(country: string) {
+    const response = await api.get(
+        `/top-headlines?country=${country}&apiKey=d284964e721645ff882dbb3cbe939777`
+    );
+    return response.data;
+}

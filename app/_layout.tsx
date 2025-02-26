@@ -18,6 +18,51 @@ export default function RootLayout() {
                         tabBarLabelStyle: { fontSize: 12 },
                     }}
                 />
+
+                <Tabs.Screen
+                    name="news/categories/countryCategories/index"
+                    options={{
+                        title: "All Countries",
+                        headerShown: false,
+                        tabBarIcon: ({ color }) => (
+                            <MaterialIcons name="flag" size={28} color={color} />
+                        ),
+                        tabBarLabelStyle: { fontSize: 12 },
+                    }}
+                />
+
+                <Tabs.Screen
+                    name="news/categories/index"
+                    options={{
+                        title: "All Categories",
+                        headerShown: false,
+                        tabBarIcon: ({ color }) => (
+                            <MaterialIcons name="category" size={28} color={color} />
+                        ),
+                        tabBarLabelStyle: { fontSize: 12 },
+                    }}
+                />
+
+                {/* Hide tabs */}
+                <Tabs.Screen
+                    name="news/categories/[newsByCategory]"
+                    options={{
+                        href: null,
+                    }}
+                />
+                <Tabs.Screen
+                    name="news/countries/index"
+                    options={{
+                        href: null,
+                    }}
+                />
+                <Tabs.Screen
+                    name="news/details/index"
+                    options={{
+                        href: null,
+                    }}
+                />
+
             </Tabs>
         </QueryClientProvider>
     );

@@ -7,7 +7,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 function AllCountries(){
 
     const countries = [
-        { id: "1", name: "United Arab Emirates", code: "ae", icon: "flag" },
+        { id: "1", name: "United Status", code: "us", icon: "flag" },
         { id: "2", name: "Argentina", code: "ar", icon: "flag" },
         { id: "3", name: "Australia", code: "au", icon: "flag" },
         { id: "4", name: "Belgium", code: "be", icon: "flag" },

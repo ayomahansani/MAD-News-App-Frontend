@@ -21,3 +21,12 @@ export async function getNewsByCountry(country: string) {
     );
     return response.data;
 }
+
+//searchNews
+
+export async function getNewsByQuery(query: string) {
+    const response = await axios.get(
+        `https://newsapi.org/v2/everything?q=${query}&apiKey=d284964e721645ff882dbb3cbe939777`
+    );
+    return response.data;
+}

@@ -13,7 +13,19 @@ export default function RootLayout() {
                         title: "Home",
                         headerShown: false,
                         tabBarIcon: ({ color }) => (
-                            <MaterialIcons name="home" size={28} color={color} />
+                            <MaterialIcons name="home" size={26} color={color} />
+                        ),
+                        tabBarLabelStyle: { fontSize: 12 },
+                    }}
+                />
+
+                <Tabs.Screen
+                    name="news/everything/index"
+                    options={{
+                        title: "Search News",
+                        headerShown: false,
+                        tabBarIcon: ({ color }) => (
+                            <MaterialIcons name="search" size={26} color={color} />
                         ),
                         tabBarLabelStyle: { fontSize: 12 },
                     }}
@@ -25,7 +37,7 @@ export default function RootLayout() {
                         title: "All Countries",
                         headerShown: false,
                         tabBarIcon: ({ color }) => (
-                            <MaterialIcons name="flag" size={28} color={color} />
+                            <MaterialIcons name="flag" size={26} color={color} />
                         ),
                         tabBarLabelStyle: { fontSize: 12 },
                     }}
@@ -37,7 +49,7 @@ export default function RootLayout() {
                         title: "All Categories",
                         headerShown: false,
                         tabBarIcon: ({ color }) => (
-                            <MaterialIcons name="category" size={28} color={color} />
+                            <MaterialIcons name="category" size={26} color={color} />
                         ),
                         tabBarLabelStyle: { fontSize: 12 },
                     }}

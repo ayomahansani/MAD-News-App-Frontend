@@ -7,10 +7,13 @@ import {getNewsByCategory} from "../../../lib/api/api";
 function NewsByCategory(){
 
     // get the category from the url
-    const {newsByCategory} = useLocalSearchParams();
-    const {data, error, isError, isSuccess, isLoading} = useQuery({
-        queryKey: ["newsByCategory"],
-        queryFn: () => getNewsByCategory(newsByCategory),
+    // Ensure newsByCategory is a string
+    const { newsByCategory } = useLocalSearchParams();
+    const category = Array.isArray(newsByCategory) ? newsByCategory[0] : newsByCategory;
+
+    const { data, error, isError, isSuccess, isLoading } = useQuery({
+        queryKey: ["newsByCategory", category], // Add category to prevent caching issues
+        queryFn: () => getNewsByCategory(category as string),
     });
 
     const router = useRouter();

@@ -16,8 +16,6 @@ export default function RootLayout() {
                             <MaterialIcons name="home" size={28} color={color} />
                         ),
                         tabBarLabelStyle: { fontSize: 12 },
-
-
                     }}
                 />
             </Tabs>

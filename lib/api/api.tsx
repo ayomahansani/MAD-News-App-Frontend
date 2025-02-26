@@ -22,7 +22,7 @@ export async function getNewsByCountry(country: string) {
     return response.data;
 }
 
-//searchNews
+//search news
 
 export async function getNewsByQuery(query: string) {
     const response = await axios.get(

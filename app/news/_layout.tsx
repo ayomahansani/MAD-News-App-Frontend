@@ -19,7 +19,7 @@ export default function HomeLayout() {
                 <Tabs.Screen
                     name="search_everything/index"
                     options={{
-                        title: "Search News",
+                        title: "Search",
                         headerShown: false,
                         tabBarIcon: ({ color }) => (
                             <MaterialIcons name="search" size={26} color={color} />
@@ -31,7 +31,7 @@ export default function HomeLayout() {
                 <Tabs.Screen
                     name="categories/countryCategories/index"
                     options={{
-                        title: "All Countries",
+                        title: "Countries",
                         headerShown: false,
                         tabBarIcon: ({ color }) => (
                             <MaterialIcons name="flag" size={26} color={color} />
@@ -43,10 +43,22 @@ export default function HomeLayout() {
                 <Tabs.Screen
                     name="categories/index"
                     options={{
-                        title: "All Categories",
+                        title: "Categories",
                         headerShown: false,
                         tabBarIcon: ({ color }) => (
                             <MaterialIcons name="category" size={26} color={color} />
+                        ),
+                        tabBarLabelStyle: { fontSize: 12 },
+                    }}
+                />
+
+                <Tabs.Screen
+                    name="profile/index"
+                    options={{
+                        title: "Profile",
+                        headerShown: false,
+                        tabBarIcon: ({ color }) => (
+                            <MaterialIcons name="person" size={26} color={color} />
                         ),
                         tabBarLabelStyle: { fontSize: 12 },
                     }}

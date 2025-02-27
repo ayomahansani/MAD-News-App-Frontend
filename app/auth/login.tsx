@@ -11,23 +11,33 @@ function Login(){
     const [password, setPassword] = useState("");
 
     const handleLogin = async () => {
-        try {
-            const res = await axios.post('http://localhost:3001/auth/login', { username, password });
-            Alert.alert('Success', 'Logged in successfully');
-            // router.push("Home/HomeScreen");
-        } catch (error) {
-            Alert.alert('Error', error.response?.data?.message || 'Login failed');
+
+        if(username === 'Ayoma' && password === '1234') {
+            console.log("Navigating to /news/news");
+            router.push("/home");
         }
+
+        // try {
+        //     const res = await axios.post('http://localhost:3001/auth/login', { username, password });
+        //     Alert.alert('Success', 'Logged in successfully');
+        //     router.push("/news/index");
+        // } catch (error) {
+        //     Alert.alert('Error', error.response?.data?.message || 'Login failed');
+        // }
     };
 
     return(
         <View style={styles.container}>
-            <Text> Login </Text>
+            <Text style={styles.title}>Login</Text>
 
-            <TextInput placeholder="Enter your username" onChangeText={setUsername} value={username} style={styles.input}/>
-            <TextInput placeholder="Enter your password" secureTextEntry={true} onChangeText={setPassword} value={password} style={styles.input}/>
+            <View style={styles.form}>
+                <TextInput placeholder="Enter your username" onChangeText={setUsername} value={username} style={styles.input}/>
+                <TextInput placeholder="Enter your password" secureTextEntry={true} onChangeText={setPassword} value={password} style={styles.input}/>
 
-            <Button onPress={handleLogin} title='LOGIN' color="#841584"/>
+                <TouchableOpacity style={styles.button} onPress={handleLogin}>
+                    <Text style={styles.buttonText}>LOGIN</Text>
+                </TouchableOpacity>
+            </View>
 
         </View>
     );
@@ -38,15 +48,40 @@ export default Login;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 16,
+        backgroundColor: "#f5f5f5",
+    },
+    title: {
+        fontSize: 32,
+        fontWeight: "bold",
+        marginBottom: 24,
+    },
+    form: {
+        width: "100%",
     },
     input: {
-        height: 40,
-        margin: 12,
+        height: 50,
+        borderColor: "#ccc",
         borderWidth: 1,
-        padding: 10,
+        borderRadius: 8,
+        paddingHorizontal: 16,
+        marginBottom: 16,
+        backgroundColor: "#fff",
+    },
+    button: {
+        height: 50,
+        backgroundColor: "#6200ea",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 8,
+        marginTop: 16,
+    },
+    buttonText: {
+        color: "#fff",
+        fontSize: 18,
+        fontWeight: "bold",
     },
 });
 

@@ -13,30 +13,23 @@ function WelcomeScreen(){
                 resizeMode="cover"
             >
                 <View style={styles.overlay}>
-                    <View style={styles.header}>
-                        <Text style={styles.title}>Welcome to News App</Text>
-                    </View>
-                    <View style={styles.content}>
-                        <Text style={styles.subtitle}>
-                            Welcome to Masync News App. Your daily does of news, curated just for you...
-                        </Text>
-                        <TouchableOpacity
-                            style={styles.button}
-                            onPress={() => {
-                                router.push("/auth/login");
-                            }}
-                        >
-                            <Text>LOGIN</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.button}
-                            onPress={() => {
-                                router.push("/auth/register");
-                            }}
-                        >
-                            <Text>REGISTER</Text>
-                        </TouchableOpacity>
-                    </View>
+                    <Text style={styles.mainText}>Masynctech</Text>
+                    <Text style={styles.subText}>Coding School</Text>
+                    <Text style={styles.tagline}>Build Apps, Build Futures</Text>
+                </View>
+                <View style={styles.buttons}>
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={() => router.push("/auth/login")}
+                    >
+                        <Text style={styles.buttonText}>Login</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={() => router.push("/auth/register")}
+                    >
+                        <Text style={styles.buttonText}>Register</Text>
+                    </TouchableOpacity>
                 </View>
 
             </ImageBackground>
@@ -49,55 +42,59 @@ export default WelcomeScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent: "center",
     },
     backgroundImage: {
         flex: 1,
         justifyContent: "center",
     },
+    video: {
+        ...StyleSheet.absoluteFillObject,
+    },
     overlay: {
-        flex: 1,
-        backgroundColor: "rgba(0, 0, 0, 0.5)", // Add a dark overlay to enhance text readability
+        ...StyleSheet.absoluteFillObject,
         justifyContent: "center",
         alignItems: "center",
-        padding: 24,
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
     },
-    header: {
-        marginBottom: 20,
-    },
-    title: {
-        fontSize: 43,
+    mainText: {
+        color: "white",
+        fontSize: 68,
         fontWeight: "bold",
         textAlign: "center",
-        color: "#fff",
     },
-    content: {
-        width: "100%",
-        alignItems: "center",
-    },
-    subtitle: {
-        fontSize: 18,
-        color: "#ddd",
+    subText: {
+        color: "white",
+        fontSize: 24,
+        fontWeight: "bold",
         textAlign: "center",
-        marginVertical: 20,
+    },
+    tagline: {
+        color: "white",
+        fontSize: 18,
+        fontStyle: "italic",
+        textAlign: "center",
+        marginTop: 10,
+    },
+    buttons: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        alignItems: "center",
+        position: "absolute",
+        bottom: 30,
+        left: 0,
+        right: 0,
     },
     button: {
-        backgroundColor: "#1e90ff",
+        backgroundColor: "#6200ea",
         paddingVertical: 12,
-        paddingHorizontal: 32,
+        paddingHorizontal: 20,
         borderRadius: 25,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-        marginVertical: 10,
+        elevation: 3, // Adds a shadow effect on Android
     },
     buttonText: {
-        fontSize: 16,
-        color: "#fff",
-        fontWeight: "600",
+        color: "white",
+        fontSize: 18,
+        fontWeight: "bold",
     },
 });

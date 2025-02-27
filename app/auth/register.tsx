@@ -16,7 +16,7 @@ function Register(){
         try {
             const res = await axios.post('http://localhost:3001/auth/register', {firstName, lastName, username, password });
             Alert.alert('Success', 'SignUp in successfully');
-            // router.push("LoginScreen");
+            router.push("/login");
         } catch (error) {
             Alert.alert('Error', error.response?.data?.message || 'SignUp failed');
         }
@@ -24,15 +24,18 @@ function Register(){
 
     return(
         <View style={styles.container}>
-            <Text> Sign Up </Text>
+            <Text style={styles.title}>Sign Up</Text>
 
-            <TextInput placeholder="Enter your first name" onChangeText={setFirstName} value={firstName} style={styles.input}/>
-            <TextInput placeholder="Enter your last anme" onChangeText={setLastName} value={lastName} style={styles.input}/>
-            <TextInput placeholder="Enter your username" onChangeText={setUsername} value={username} style={styles.input}/>
-            <TextInput placeholder="Enter your password" secureTextEntry={true} onChangeText={setPassword} value={password} style={styles.input}/>
+            <View style={styles.form}>
+                <TextInput placeholder="Enter your first name" onChangeText={setFirstName} value={firstName} style={styles.input}/>
+                <TextInput placeholder="Enter your last anme" onChangeText={setLastName} value={lastName} style={styles.input}/>
+                <TextInput placeholder="Enter your username" onChangeText={setUsername} value={username} style={styles.input}/>
+                <TextInput placeholder="Enter your password" secureTextEntry={true} onChangeText={setPassword} value={password} style={styles.input}/>
 
-            <Button onPress={handleSignUp} title='SIGN UP' color="#841584"/>
-
+                <TouchableOpacity style={styles.button} onPress={handleSignUp}>
+                    <Text style={styles.buttonText}>REGISTER</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
@@ -42,15 +45,39 @@ export default Register;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 16,
+        backgroundColor: "#f5f5f5",
+    },
+    title: {
+        fontSize: 32,
+        fontWeight: "bold",
+        marginBottom: 24,
+    },
+    form: {
+        width: "100%",
     },
     input: {
-        height: 40,
-        margin: 12,
+        height: 50,
+        borderColor: "#ccc",
         borderWidth: 1,
-        padding: 10,
+        borderRadius: 8,
+        paddingHorizontal: 16,
+        marginBottom: 16,
+        backgroundColor: "#fff",
+    },
+    button: {
+        height: 50,
+        backgroundColor: "#6200ea",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 8,
+        marginTop: 16,
+    },
+    buttonText: {
+        color: "#fff",
+        fontSize: 18,
+        fontWeight: "bold",
     },
 });
-

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, ImageBackground, TouchableOpacity,} from "react
 import React from "react";
 import {router, useRouter} from "expo-router";
 
-function Home(){
+function WelcomeScreen(){
     return(
         <View style={styles.container}>
             <ImageBackground
@@ -14,7 +14,7 @@ function Home(){
             >
                 <View style={styles.overlay}>
                     <View style={styles.header}>
-                        <Text style={styles.title}>Masync News App</Text>
+                        <Text style={styles.title}>Welcome to News App</Text>
                     </View>
                     <View style={styles.content}>
                         <Text style={styles.subtitle}>
@@ -23,18 +23,18 @@ function Home(){
                         <TouchableOpacity
                             style={styles.button}
                             onPress={() => {
-                                router.push("/news/categories");
+                                router.push("/auth/login");
                             }}
                         >
-                            <Text>Browse By Categories</Text>
+                            <Text>LOGIN</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             style={styles.button}
                             onPress={() => {
-                                router.push("/news/categories/countryCategories");
+                                router.push("/auth/register");
                             }}
                         >
-                            <Text>Browse By Country</Text>
+                            <Text>REGISTER</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -44,7 +44,7 @@ function Home(){
     );
 }
 
-export default Home;
+export default WelcomeScreen;
 
 const styles = StyleSheet.create({
     container: {

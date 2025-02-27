@@ -1,4 +1,4 @@
-import {Stack, Tabs} from "expo-router";
+import {Stack} from "expo-router";
 import {QueryClientProvider} from "@tanstack/react-query";
 import queryClient from "../lib/react-query/queryClient";
 

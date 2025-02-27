@@ -1,4 +1,4 @@
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {FlatList, StyleSheet, Text, TouchableOpacity} from "react-native";
 import React from "react";
 import {useRouter} from "expo-router";
 import {LinearGradient} from "expo-linear-gradient";

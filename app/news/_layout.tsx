@@ -1,7 +1,5 @@
 import {Tabs} from "expo-router";
-import {QueryClientProvider} from "@tanstack/react-query";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import queryClient from "../../lib/react-query/queryClient";
 
 export default function HomeLayout() {
     return (

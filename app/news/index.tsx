@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, ImageBackground, TouchableOpacity,} from "react-native";
 import React from "react";
-import {router, useRouter} from "expo-router";
+import {router} from "expo-router";
 
 function HomePage(){
     return(

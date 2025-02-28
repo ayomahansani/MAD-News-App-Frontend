@@ -1,17 +1,29 @@
 import { StyleSheet, Text, View, ImageBackground, TouchableOpacity,} from "react-native";
 import React from "react";
 import {router} from "expo-router";
+import { Video, ResizeMode } from "expo-av";
 
 function WelcomeScreen(){
+
+    const video = React.useRef(null);
+    const [status, setStatus] = React.useState({});
+
     return(
         <View style={styles.container}>
-            <ImageBackground
+            <Video
+                ref={video}
+                style={styles.video}
                 source={{
-                    uri: "https://images.pexels.com/photos/9967888/pexels-photo-9967888.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    //uri: "https://cdn.pixabay.com/video/2016/09/21/5398-183786939_tiny.mp4",
+                    uri: "https://cdn.pixabay.com/video/2024/03/04/202987-919379330_large.mp4",
+                    //uri: "https://cdn.pixabay.com/video/2023/07/31/174030-850286635_tiny.mp4",
+
                 }}
-                style={styles.backgroundImage}
-                resizeMode="cover"
-            >
+                resizeMode={ResizeMode.COVER}
+                shouldPlay
+                isLooping
+                onPlaybackStatusUpdate={(status) => setStatus(() => status)}
+            />
                 <View style={styles.overlay}>
                     <Text style={styles.mainText}>NewsFlash</Text>
                     <Text style={styles.subText}>Stay Informed, Stay Ahead</Text>
@@ -31,8 +43,6 @@ function WelcomeScreen(){
                         <Text style={styles.buttonText}>Register</Text>
                     </TouchableOpacity>
                 </View>
-
-            </ImageBackground>
         </View>
     );
 }

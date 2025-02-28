@@ -26,8 +26,21 @@ function Login(){
 
             Alert.alert('Success', 'Logged in successfully');
             router.push("/news");
-        } catch (error) {
-            Alert.alert('Error', error.response?.data?.message || 'Login failed');
+
+        } catch (error: unknown) {
+            console.log("Login Error:", error); // Debugging
+
+            let errorMessage = "Login failed";
+
+            if (axios.isAxiosError(error)) {
+                errorMessage = error.response?.data?.message || "Invalid credentials";
+            } else if (error instanceof Error) {
+                errorMessage = error.message;
+            } else {
+                errorMessage = "An unknown error occurred";
+            }
+
+            Alert.alert("Error", errorMessage);
         }
     };
 

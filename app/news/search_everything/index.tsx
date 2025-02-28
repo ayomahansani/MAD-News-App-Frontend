@@ -23,7 +23,7 @@ function SearchNews(){
     if (isLoading) {
         return (
             <View style={styles.loadingContainer}>
-                <ActivityIndicator size="large" color="#4c669f" />
+                <ActivityIndicator size="large" color="#c84a6d" />
                 <Text style={styles.loadingText}>Loading news...</Text>
             </View>
         );
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     searchButton: {
         padding: 8,
         borderRadius: 8,
-        backgroundColor: "#4c669f",
+        backgroundColor: "#c84a6d",
         justifyContent: "center",
         alignItems: "center",
     },
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     loadingText: {
         marginTop: 8,
         fontSize: 16,
-        color: "#4c669f",
+        color: "#c84a6d",
     },
     errorContainer: {
         flex: 1,

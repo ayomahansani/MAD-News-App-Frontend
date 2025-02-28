@@ -1,12 +1,23 @@
 import { StyleSheet, Text, View, ImageBackground, TouchableOpacity,} from "react-native";
-import React from "react";
-import {useRouter} from "expo-router";
+import React, {useEffect, useState} from "react";
+import { useRouter} from "expo-router";
+// import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function Profile(){
 
     const router = useRouter();
+    const [email, setEmail] = useState("");
 
-    const handleLogout = () => {
+    // useEffect(() => {
+    //     const getUserEmail = async () => {
+    //         const storedEmail = await AsyncStorage.getItem("userEmail");
+    //         if (storedEmail) setEmail(storedEmail);
+    //     };
+    //     getUserEmail();
+    // }, []);
+
+    const handleLogout = async () => {
+        // await AsyncStorage.removeItem("userEmail"); // Clear stored email on logout
         router.push("/auth/login");
     };
 
@@ -15,7 +26,7 @@ function Profile(){
             <Text style={styles.title}>User Profile</Text>
 
                 <>
-                    <Text style={styles.text}>Email: </Text>
+                    <Text style={styles.text}>Email: {email || "Loading..."}</Text>
                     <TouchableOpacity style={styles.button} onPress={handleLogout}>
                     <Text style={styles.buttonText}>Logout</Text>
                     </TouchableOpacity>
@@ -46,7 +57,7 @@ const styles = StyleSheet.create({
     },
     button: {
         height: 50,
-        backgroundColor: "#6200ea",
+        backgroundColor: "#c84a6d",
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 8,

@@ -2,6 +2,7 @@ import {StyleSheet, Text, View, ImageBackground, TouchableOpacity, TextInput, Bu
 import React, {useState} from "react";
 import {useRouter} from "expo-router";
 import axios from "axios";
+// import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function Register(){
 
@@ -13,11 +14,22 @@ function Register(){
     const [password, setPassword] = useState("");
 
     const handleSignUp = async () => {
+
         try {
-            const res = await axios.post('http://localhost:3001/auth/register', {firstName, lastName, username, password });
+            // If we're testing on a mobile device, localhost might not work because it points to the device itself. So use the actual IP address of the machine instead of localhost.
+            // const res = await axios.post('http://localhost:3001/auth/register', {firstName, lastName, username, password });
+            const res = await axios.post('http://192.168.8.119:3001/auth/register', { firstName, lastName, username, password });
+
+            console.log("come sign up method inside")
+
+            // // Save user email in AsyncStorage
+            // await AsyncStorage.setItem("userEmail", username);
+
             Alert.alert('Success', 'SignUp in successfully');
-            router.push("/login");
+            router.push("/news");
+
         } catch (error) {
+            console.log("Error:", error.response?.data || error.message);  // Log error details
             Alert.alert('Error', error.response?.data?.message || 'SignUp failed');
         }
     };
@@ -28,7 +40,7 @@ function Register(){
 
             <View style={styles.form}>
                 <TextInput placeholder="Enter your first name" onChangeText={setFirstName} value={firstName} style={styles.input}/>
-                <TextInput placeholder="Enter your last anme" onChangeText={setLastName} value={lastName} style={styles.input}/>
+                <TextInput placeholder="Enter your last name" onChangeText={setLastName} value={lastName} style={styles.input}/>
                 <TextInput placeholder="Enter your username" onChangeText={setUsername} value={username} style={styles.input}/>
                 <TextInput placeholder="Enter your password" secureTextEntry={true} onChangeText={setPassword} value={password} style={styles.input}/>
 
@@ -69,7 +81,7 @@ const styles = StyleSheet.create({
     },
     button: {
         height: 50,
-        backgroundColor: "#6200ea",
+        backgroundColor: "#c84a6d",
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 8,

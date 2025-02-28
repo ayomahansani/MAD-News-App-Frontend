@@ -9,10 +9,12 @@ export default function HomeLayout() {
                     options={{
                         title: "Home",
                         headerShown: false,
-                        tabBarIcon: ({ color }) => (
-                            <MaterialIcons name="home" size={26} color={color} />
+                        tabBarIcon: ({ focused }) => (
+                            <MaterialIcons name="home" size={28} color={focused ? "#494646" : "#c84a6d"} />
                         ),
                         tabBarLabelStyle: { fontSize: 12 },
+                        tabBarActiveTintColor: "#494646",
+                        tabBarInactiveTintColor: "#c84a6d",
                     }}
                 />
 
@@ -21,10 +23,12 @@ export default function HomeLayout() {
                     options={{
                         title: "Search",
                         headerShown: false,
-                        tabBarIcon: ({ color }) => (
-                            <MaterialIcons name="search" size={26} color={color} />
+                        tabBarIcon: ({ focused }) => (
+                            <MaterialIcons name="search" size={28} color={focused ? "#494646" : "#c84a6d"} />
                         ),
                         tabBarLabelStyle: { fontSize: 12 },
+                        tabBarActiveTintColor: "#494646",
+                        tabBarInactiveTintColor: "#c84a6d",
                     }}
                 />
 
@@ -33,10 +37,12 @@ export default function HomeLayout() {
                     options={{
                         title: "Countries",
                         headerShown: false,
-                        tabBarIcon: ({ color }) => (
-                            <MaterialIcons name="flag" size={26} color={color} />
+                        tabBarIcon: ({ focused }) => (
+                            <MaterialIcons name="flag" size={28} color={focused ? "#494646" : "#c84a6d"} />
                         ),
                         tabBarLabelStyle: { fontSize: 12 },
+                        tabBarActiveTintColor: "#494646",
+                        tabBarInactiveTintColor: "#c84a6d",
                     }}
                 />
 
@@ -45,10 +51,12 @@ export default function HomeLayout() {
                     options={{
                         title: "Categories",
                         headerShown: false,
-                        tabBarIcon: ({ color }) => (
-                            <MaterialIcons name="category" size={26} color={color} />
+                        tabBarIcon: ({ focused }) => (
+                            <MaterialIcons name="category" size={28} color={focused ? "#494646" : "#c84a6d"} />
                         ),
                         tabBarLabelStyle: { fontSize: 12 },
+                        tabBarActiveTintColor: "#494646",
+                        tabBarInactiveTintColor: "#c84a6d",
                     }}
                 />
 
@@ -57,10 +65,12 @@ export default function HomeLayout() {
                     options={{
                         title: "Profile",
                         headerShown: false,
-                        tabBarIcon: ({ color }) => (
-                            <MaterialIcons name="person" size={26} color={color} />
+                        tabBarIcon: ({ focused }) => (
+                            <MaterialIcons name="person" size={28} color={focused ? "#494646" : "#c84a6d"} />
                         ),
                         tabBarLabelStyle: { fontSize: 12 },
+                        tabBarActiveTintColor: "#494646",
+                        tabBarInactiveTintColor: "#c84a6d",
                     }}
                 />
 

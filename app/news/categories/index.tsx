@@ -35,7 +35,7 @@ function AllCategories(){
 
     return(
         <LinearGradient
-            colors={["#4c669f", "#3b5998", "#192f6a"]}
+            colors={["#e192a8", "#bc607a", "#c84a6d"]}
             style={styles.container}
         >
             <Text style={styles.title}>Categories</Text>
@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
         alignItems: "center",
-        padding: 16,
-        margin: 8,
+        padding: 14,
+        margin: 6,
         backgroundColor: "rgba(255, 255, 255, 0.2)",
         borderRadius: 12,
         shadowColor: "#000",

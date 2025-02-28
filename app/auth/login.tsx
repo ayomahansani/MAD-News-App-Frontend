@@ -12,18 +12,18 @@ function Login(){
 
     const handleLogin = async () => {
 
-        if(username === 'Ayoma' && password === '1234') {
-            console.log("Navigating to /news/news");
-            router.push("/home");
-        }
-
-        // try {
-        //     const res = await axios.post('http://localhost:3001/auth/login', { username, password });
-        //     Alert.alert('Success', 'Logged in successfully');
-        //     router.push("/news/index");
-        // } catch (error) {
-        //     Alert.alert('Error', error.response?.data?.message || 'Login failed');
+        // if(username === 'Ayoma' && password === '1234') {
+        //     console.log("Navigating to home");
+        //     router.push("/news");
         // }
+
+        try {
+            const res = await axios.post('http://192.168.8.119:3001/auth/login', { username, password });
+            Alert.alert('Success', 'Logged in successfully');
+            router.push("/news");
+        } catch (error) {
+            Alert.alert('Error', error.response?.data?.message || 'Login failed');
+        }
     };
 
     return(
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     },
     button: {
         height: 50,
-        backgroundColor: "#6200ea",
+        backgroundColor: "#c84a6d",
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 8,

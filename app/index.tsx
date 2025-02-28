@@ -13,9 +13,9 @@ function WelcomeScreen(){
                 resizeMode="cover"
             >
                 <View style={styles.overlay}>
-                    <Text style={styles.mainText}>Masynctech</Text>
-                    <Text style={styles.subText}>Coding School</Text>
-                    <Text style={styles.tagline}>Build Apps, Build Futures</Text>
+                    <Text style={styles.mainText}>NewsFlash</Text>
+                    <Text style={styles.subText}>Stay Informed, Stay Ahead</Text>
+                    <Text style={styles.tagline}>Breaking News, Anytime, Anywhere</Text>
                 </View>
                 <View style={styles.buttons}>
                     <TouchableOpacity
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
         fontSize: 68,
         fontWeight: "bold",
         textAlign: "center",
+        marginBottom: 40,
     },
     subText: {
         color: "white",
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     },
     tagline: {
         color: "white",
-        fontSize: 18,
+        fontSize: 16,
         fontStyle: "italic",
         textAlign: "center",
         marginTop: 10,
@@ -86,10 +87,10 @@ const styles = StyleSheet.create({
         right: 0,
     },
     button: {
-        backgroundColor: "#6200ea",
-        paddingVertical: 12,
-        paddingHorizontal: 20,
-        borderRadius: 25,
+        backgroundColor: "#c84a6d",
+        paddingVertical: 10,
+        paddingHorizontal: 35,
+        borderRadius: 20,
         elevation: 3, // Adds a shadow effect on Android
     },
     buttonText: {

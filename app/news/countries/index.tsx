@@ -27,7 +27,7 @@ function CountryNews() {
     if(isLoading) {
         return (
             <View style={styles.loadingContainer}>
-                <ActivityIndicator size="large" color="#4c669f"/>
+                <ActivityIndicator size="large" color="#c84a6d"/>
                 <Text style={styles.loadingText}>Loading...</Text>
             </View>
         );
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     loadingText: {
         marginTop: 8,
         fontSize: 16,
-        color: "#4c669f",
+        color: "#c84a6d",
     },
     errorContainer: {
         flex: 1,

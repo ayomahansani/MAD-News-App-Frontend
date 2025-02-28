@@ -14,11 +14,11 @@ function HomePage(){
             >
                 <View style={styles.overlay}>
                     <View style={styles.header}>
-                        <Text style={styles.title}>Masync News App</Text>
+                        <Text style={styles.title}>NewsFlash</Text>
                     </View>
                     <View style={styles.content}>
                         <Text style={styles.subtitle}>
-                            Welcome to Masync News App. Your daily does of news, curated just for you...
+                            Stay updated with the latest headlines, breaking stories, and in-depth analysis, all in one place.
                         </Text>
                         <TouchableOpacity
                             style={styles.button}
@@ -26,7 +26,7 @@ function HomePage(){
                                 router.push("/news/categories");
                             }}
                         >
-                            <Text>Browse By Categories</Text>
+                            <Text style={styles.buttonText}>Browse By Categories</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             style={styles.button}
@@ -34,7 +34,7 @@ function HomePage(){
                                 router.push("/news/categories/countryCategories");
                             }}
                         >
-                            <Text>Browse By Country</Text>
+                            <Text style={styles.buttonText}>Browse By Country</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -79,11 +79,12 @@ const styles = StyleSheet.create({
         color: "#ddd",
         textAlign: "center",
         marginVertical: 20,
+        marginBottom: 50
     },
     button: {
-        backgroundColor: "#1e90ff",
+        backgroundColor: "#c84a6d",
         paddingVertical: 12,
-        paddingHorizontal: 32,
+        paddingHorizontal: 34,
         borderRadius: 25,
         shadowColor: "#000",
         shadowOffset: {

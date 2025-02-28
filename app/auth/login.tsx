@@ -2,6 +2,7 @@ import {StyleSheet, Text, View, ImageBackground, TouchableOpacity, TextInput, Bu
 import React, {useState} from "react";
 import {useRouter} from "expo-router";
 import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function Login(){
 
@@ -19,6 +20,10 @@ function Login(){
 
         try {
             const res = await axios.post('http://192.168.8.119:3001/auth/login', { username, password });
+
+            // Save user email in AsyncStorage
+            await AsyncStorage.setItem("userEmail", username);
+
             Alert.alert('Success', 'Logged in successfully');
             router.push("/news");
         } catch (error) {

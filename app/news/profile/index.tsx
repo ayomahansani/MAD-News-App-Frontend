@@ -1,20 +1,20 @@
 import { StyleSheet, Text, View, ImageBackground, TouchableOpacity,} from "react-native";
 import React, {useEffect, useState} from "react";
 import { useRouter} from "expo-router";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function Profile(){
 
     const router = useRouter();
     const [email, setEmail] = useState("");
 
-    // useEffect(() => {
-    //     const getUserEmail = async () => {
-    //         const storedEmail = await AsyncStorage.getItem("userEmail");
-    //         if (storedEmail) setEmail(storedEmail);
-    //     };
-    //     getUserEmail();
-    // }, []);
+    useEffect(() => {
+        const getUserEmail = async () => {
+            const storedEmail = await AsyncStorage.getItem("userEmail");
+            if (storedEmail) setEmail(storedEmail);
+        };
+        getUserEmail();
+    }, []);
 
     const handleLogout = async () => {
         // await AsyncStorage.removeItem("userEmail"); // Clear stored email on logout

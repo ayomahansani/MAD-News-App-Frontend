@@ -1,8 +1,7 @@
-import {StyleSheet, Text, View, ImageBackground, TouchableOpacity, TextInput, Button, Alert,} from "react-native";
+import {StyleSheet, Text, View, TouchableOpacity, TextInput, Alert,} from "react-native";
 import React, {useState} from "react";
 import {useRouter} from "expo-router";
 import axios from "axios";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function Register(){
 
@@ -21,9 +20,6 @@ function Register(){
             const res = await axios.post('http://192.168.8.119:3001/auth/register', { firstName, lastName, username, password });
 
             console.log("come sign up method inside")
-
-            // // Save user email in AsyncStorage
-            // await AsyncStorage.setItem("userEmail", username);
 
             Alert.alert('Success', 'SignUp in successfully');
             router.push("/news");

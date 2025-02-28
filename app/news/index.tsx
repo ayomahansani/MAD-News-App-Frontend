@@ -7,7 +7,8 @@ function HomePage(){
         <View style={styles.container}>
             <ImageBackground
                 source={{
-                    uri: "https://images.pexels.com/photos/9967888/pexels-photo-9967888.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    //uri: "https://images.pexels.com/photos/4963086/pexels-photo-4963086.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    uri: "https://images.pexels.com/photos/9832694/pexels-photo-9832694.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 }}
                 style={styles.backgroundImage}
                 resizeMode="cover"

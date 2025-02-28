@@ -10,17 +10,18 @@ function CountryNews() {
     const { country } = useLocalSearchParams();
     const newsByCountry = Array.isArray(country) ? country[0] : country;
 
-    console.log("Selected Country Code:", newsByCountry); // ✅ Debug country
+    console.log("Selected Country Code:", newsByCountry);
 
     const { data, error, isError, isLoading } = useQuery({
         queryKey: ["newsByCountry", newsByCountry],
         queryFn: async () => {
             const response = await getNewsByCountry(newsByCountry);
-            console.log("API Response:", response); // ✅ Debug API response
+            console.log("API Response:", response);
             return response;
         },
         enabled: !!newsByCountry,
     });
+
 
     const router = useRouter();
 
